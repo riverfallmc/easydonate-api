@@ -1,4 +1,6 @@
 # Rust EasyDonate API
+![version](https://img.shields.io/crates/v/easydonate-api
+)
 
 Неофициальная имплементация [API EasyDonate](https://docs.easydonate.ru/) в виде крейта на языке Rust.
 
