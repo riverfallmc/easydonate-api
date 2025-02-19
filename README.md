@@ -1,6 +1,6 @@
 # Rust EasyDonate API
 
-Неофициальный имплементация [API EasyDonate](https://docs.easydonate.ru/) в виде крейта на языке Rust.
+Неофициальная имплементация [API EasyDonate](https://docs.easydonate.ru/) в виде крейта на языке Rust.
 
 # Установка
 ```bash
