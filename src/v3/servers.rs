@@ -1,12 +1,12 @@
 use isahc::{send_async, AsyncReadResponseExt, Request};
 use crate::result::{EasyResponse, EasyResult};
 
-use super::types::shop::Shop;
+use super::types::server::Server;
 
 /// Имплементация
-/// https://docs.easydonate.ru/shop/shop
-pub async fn get_shop(shop_key: String) -> EasyResult<Shop> {
-  let request = Request::get("https://easydonate.ru/api/v3/shop")
+/// https://docs.easydonate.ru/shop/servers
+pub async fn get_servers(shop_key: String) -> EasyResult<Vec<Server>> {
+  let request = Request::get("https://easydonate.ru/api/v3/shop/servers")
     .header("Shop-Key", shop_key)
     .body(())?;
 
@@ -16,7 +16,7 @@ pub async fn get_shop(shop_key: String) -> EasyResult<Shop> {
   let body = response.text()
     .await?;
 
-  let des = serde_json::from_str::<EasyResponse<Shop>>(&body)?;
+  let des = serde_json::from_str::<EasyResponse<Vec<Server>>>(&body)?;
 
   Ok(des.result()?)
 }

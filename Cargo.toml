@@ -4,7 +4,7 @@ description = "EasyDonate API implementation"
 authors = ["smokingplaya"]
 repository = "https://github.com/riverfallmc/easydonate-api"
 license = "AGPL-3.0-or-later"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]

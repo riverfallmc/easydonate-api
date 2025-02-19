@@ -1,8 +1,8 @@
 use std::{env, process::ExitCode};
-use crate::{result::EasyResult, v3::{shop::get_shop, types::shop::Shop}};
+use crate::{result::EasyResult, v3::{servers::get_servers, types::server::Server}};
 
 /// самое главное
-async fn test() -> EasyResult<Shop> {
+async fn test() -> EasyResult<Vec<Server>> {
   // ключ магазина
   //
   // для примера берём переменную окружения SHOP_KEY
@@ -10,20 +10,17 @@ async fn test() -> EasyResult<Shop> {
   let shop_key = env::var("SHOP_KEY")?;
 
   // отправляем запрос на сервер
-  let shop = get_shop(shop_key)
+  let servers = get_servers(shop_key)
     .await?;
 
   // выводим в консоль ответ сервера
-  dbg!(&shop);
+  dbg!(&servers);
 
-  Ok(shop)
+  Ok(servers)
 }
 
-/// на это можно не обращать внимание
-///
-/// у кого-то просто руки кривые чтобы имплементить трейт Termination ахха
 #[tokio::test]
-pub async fn shop() -> ExitCode {
+pub async fn servers() -> ExitCode {
   match test().await {
     Ok(_) => {
       ExitCode::SUCCESS
