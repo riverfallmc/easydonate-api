@@ -1,0 +1,17 @@
+[package]
+name = "easydonate-api"
+description = "EasyDonate API implementation"
+authors = ["smokingplaya"]
+repository = "https://github.com/riverfallmc/easydonate-api"
+license = "AGPL-3.0-or-later"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.95"
+isahc = "1.7.2"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.138"
+
+[dev-dependencies]
+tokio = { version = "1.43.0", features = ["full"] }
