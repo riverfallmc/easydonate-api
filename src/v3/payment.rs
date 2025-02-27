@@ -5,12 +5,12 @@ use crate::result::{EasyResponse, EasyResult};
 
 #[derive(Serialize, Debug, Clone)]
 pub struct PaymentBody {
-  customer: String,
-  server_id: i32,
-  products: HashMap<String, i32>,
-  email: String,
-  coupon: Option<String>,
-  success_url: Option<String>
+  pub customer: String,
+  pub server_id: i32,
+  pub products: HashMap<String, i32>,
+  pub email: String,
+  pub coupon: Option<String>,
+  pub success_url: Option<String>
 }
 
 #[derive(Serialize, Deserialize)]
