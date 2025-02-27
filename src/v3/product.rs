@@ -17,5 +17,5 @@ pub async fn get_product(shop_key: String, id: i64) -> EasyResult<Product> {
 
   let des = serde_json::from_str::<EasyResponse<Product>>(&body)?;
 
-  Ok(des.result()?)
+  des.result()
 }

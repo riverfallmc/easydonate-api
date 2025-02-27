@@ -1,6 +1,6 @@
 use isahc::{send_async, AsyncReadResponseExt, Request};
 use crate::result::{EasyResponse, EasyResult};
-use super::types::{product::Product, server::Server};
+use super::types::server::Server;
 
 /// Имплементация
 /// https://docs.easydonate.ru/shop/server
@@ -17,5 +17,5 @@ pub async fn get_server(shop_key: String, id: i64) -> EasyResult<Server> {
 
   let des = serde_json::from_str::<EasyResponse<Server>>(&body)?;
 
-  Ok(des.result()?)
+  des.result()
 }

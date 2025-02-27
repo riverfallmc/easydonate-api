@@ -1,5 +1,4 @@
 use serde::{Deserialize, Serialize};
-use super::server::Server;
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Product {

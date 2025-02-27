@@ -9,3 +9,5 @@ pub mod products;
 
 pub mod server;
 pub mod servers;
+
+pub mod payment;

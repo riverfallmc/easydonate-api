@@ -18,5 +18,5 @@ pub async fn get_servers(shop_key: String) -> EasyResult<Vec<Server>> {
 
   let des = serde_json::from_str::<EasyResponse<Vec<Server>>>(&body)?;
 
-  Ok(des.result()?)
+  des.result()
 }
